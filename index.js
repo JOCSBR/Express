@@ -4,13 +4,13 @@ const app = express(); //starting Express on app
 
 // root creation
 app.get("/", function(req,res){
-    res.send("Welcome to website"); // all roots need an answer!
+    res.send("<h1>Welcome to website</h1>"); // all roots need an answer!
 });
 app.get("/blog", function(req,res){
-    res.send("Welcome to blog");
+    res.send("<h2>Welcome to blog</h2>");
 });
 app.get("/channel", function(req,res){
-    res.send("Welcome to channel");
+    res.send("<h2>Welcome to channel</h2>");
 });
 
 
