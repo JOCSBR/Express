@@ -12,6 +12,20 @@ app.get("/blog", function(req,res){
 app.get("/channel", function(req,res){
     res.send("<h2>Welcome to channel</h2>");
 });
+app.get("/hello/:name/:company/:city?/:title?", function(req,res){
+    // req = data sent by the user
+    // res = response sent to the user
+    var name = req.params.name;
+    var company = req.params.company;
+    var city = req.params.city;
+    var title = req.params.title;
+    if(title){
+        res.send("<h1>Hello " + name + " of " + company + " of " + city + " about " + title + "</h1>");
+    }else{
+        res.send("<h1>Hello " + name + " of " + company + " of " + city + " No title </h1>");
+        }
+        // res.send("<h1>Hello " + name + " of " + company + " of " + city + "</h1>");
+});
 
 
 // Express server starts
