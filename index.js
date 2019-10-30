@@ -9,8 +9,10 @@ app.get("/", function(req,res){
 app.get("/blog", function(req,res){
     res.send("<h2>Welcome to blog</h2>");
 });
+// exemplo: localhost:4000/channel?channel = teste
 app.get("/channel", function(req,res){
-    res.send("<h2>Welcome to channel</h2>");
+    channel = req.query["channel"];
+    res.send("<h2>Welcome to channel</h2> "+channel);
 });
 app.get("/hello/:name/:company/:city?/:title?", function(req,res){
     // req = data sent by the user
